@@ -6,7 +6,8 @@
 
 source /usr/share/yunohost/helpers
 
-ynh_app_setting_set --key="mail_user" --value="no-reply"
+mail_user="no-reply"
+ynh_app_setting_set --key="mail_user" --value="$mail_user"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
