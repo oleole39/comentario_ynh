@@ -1,0 +1,40 @@
+#:schema https://github.com/YunoHost/apps/raw/main/schemas/config_panel.v1.schema.json
+version = "1.0"
+
+[main]
+name.en = "Comentario's settings"
+name.fr = "Réglages de Comentario"
+
+    [main.backend_configuration]
+    name.fr = "Backend configuration"
+    name.fr = "Configuration du backend"
+
+        [main.backend_configuration.superuser_email]
+        ask.en = "Define Superuser (email)"
+        ask.fr = "Définir le Super-utilisateur (email)"
+        type = "email"
+        help.en = "The superuser is able to edit roles in Comentario's admin UI."
+        help.fr = "Le super-utilisateur peut modifier les roles dans l'interface d'administration de Comentario."
+        bind = "SUPERUSER:__INSTALL_DIR__/backend/comentario.conf"
+
+        [main.backend_configuration.max_import_file_size]
+        ask.en = "Maximum import file size in comments"
+        ask.fr = "Disable page views' statistics"
+        type = "string"
+        help.en = "A number followed by a units in bytes, e.g. '10MiB'."
+        help.fr = "Un nombre suivie de l'unité en bytes, par exemple '10MiB'."
+        bind = "MAX_IMPORT_FILE_SIZE:__INSTALL_DIR__/backend/comentario.conf"
+
+        [main.backend_configuration.disable_page_views]
+        ask.en = "Disable page views' statistics"
+        ask.fr = "Désactiver les statistiques des pages vues"
+        type = "boolean"
+        help = "Disable page view statistics gathering and reporting in the admin UI"
+        help.fr = "Désactiver la collecte et l'affichage des statistiques des pages vues dans l'interface d'administration."
+        bind = "STATS_DISABLE_PAGE_VIEWS:__INSTALL_DIR__/backend/comentario.conf"
+
+        [main.backend_configuration.stats_max_days]
+        ask.en = "Statistics retention period (days)."
+        ask.fr = "Durée de conservation des statistiques (jours)."
+        type = "number"
+        bind = "STATS_MAX_DAYS:__INSTALL_DIR__/backend/comentario.conf"
